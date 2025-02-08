@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+
+@use "breakpoints" as *;
+
+@mixin mq($size) {
+  @if (map.has-key($breakpoints, $size)) {
+    @media screen and (min-width: map.get($breakpoints, $size)) {
+      @content;
+    }
+  } @else if(meta.type-of($size) == number) {
+    @if (math.is-unitless($size) == false) {
+      @media screen and (min-width: $size) {
+        @content;
+      }
+    } @else {
+      @error "The size argument is unitless!";
+    }
+  } @else {
+    @error "The size argument is incorrect!";
+  }
+}
