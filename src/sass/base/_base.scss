@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+
+*:focus-visible {
+  outline: 4px double black;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px white;
+}
+
+body {
+  font-size: size(8);
+  font-weight: $fw-400;
+  font-family: $ff-sans;
+  color: clr(neutral, 900);
+  background-color: clr(neutral, 100);
+  text-align: center;
+}
