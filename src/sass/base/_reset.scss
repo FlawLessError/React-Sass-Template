@@ -5,6 +5,13 @@
   font: inherit;
 }
 
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
 h1,
 h2,
 h3,
