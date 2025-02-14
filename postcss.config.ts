@@ -4,10 +4,10 @@ import postcssPresetEnv from "postcss-preset-env";
 export default {
   plugins: [
     purgeCSSPlugin({
-      content: ["./**/*.html"],
+      content: ["./src/**/*.html", "./src/**/*.tsx", "./src/**/*.ts"],
     }),
     postcssPresetEnv({
-      stage: 0,
+      stage: 3,
     }),
   ],
 };
