@@ -3,13 +3,14 @@
 *:focus-visible {
   outline: 4px double black;
   outline-offset: 2px;
-  box-shadow: 0 0 0 6px white;
+  box-shadow: 0 0 0 5px white;
 }
 
 body {
   font-size: fs(400);
   font-weight: $fw-400;
   font-family: $ff-base;
-  color: clr(neutral, 900);
   background-color: clr(neutral, 100);
+  color: clr(neutral, 400);
+  line-height: 1.5;
 }
