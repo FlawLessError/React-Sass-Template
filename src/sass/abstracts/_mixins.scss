@@ -4,6 +4,7 @@
 
 @use "breakpoints" as *;
 
+// Media Query
 @mixin mq($size) {
   @if (map.has-key($breakpoints, $size)) {
     @media screen and (min-width: map.get($breakpoints, $size)) {
@@ -20,4 +21,47 @@
   } @else {
     @error "The size argument is incorrect!";
   }
+}
+
+// Container
+@mixin container($width: normal) {
+  --padding: #{$container-inline-padding} * 2;
+  --max-width: #{$container};
+
+  width: min(calc (100% - var(--padding)), var(--max-width));
+  margin-inline: auto;
+
+  @if ($width == narrow) {
+    --max-width: #{$container-narrow};
+  }
+
+  @if ($width == wide) {
+    --max-width: #{$container-wide};
+  }
+
+  @if ($width == full-bleed) {
+    --max-width: 100%;
+  }
+
+  @content;
+}
+
+// Flex-group
+@mixin flex-group($flex-column-gap: $flex-gap, $flex-row-gap: $flex-gap * 0.5) {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: $flex-column-gap;
+  row-gap: $flex-row-gap;
+  @content;
+}
+
+// Visually hidden
+@mixin visually-hidden() {
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
 }

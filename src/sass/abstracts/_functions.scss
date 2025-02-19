@@ -1,28 +1,9 @@
 @use "sass:map";
-@use "colors" as *;
-@use "typography" as *;
-@use "sizes" as *;
+@use "sass:meta";
 
-@function clr($color, $shade) {
-  @if (map.has-key($colors, $color, $shade)) {
-    @return map.get($colors, $color, $shade);
-  } @else {
-    @error "$colors don't have that color!";
+@function rem($size) {
+  @if (meta.type-of($size) != number) {
+    @error "$sizes is not a number!";
   }
-}
-
-@function fs($font-size) {
-  @if (map.has-key($font-sizes, $font-size)) {
-    @return map.get($font-sizes, $font-size);
-  } @else {
-    @error "$font-sizes don't have that size!";
-  }
-}
-
-@function size($size) {
-  @if (map.has-key($sizes, $size)) {
-    @return map.get($sizes, $size);
-  } @else {
-    @error "$sizes don't have that size!";
-  }
+  @return $size / 16px * 1rem;
 }

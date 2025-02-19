@@ -1,0 +1,14 @@
+@use "../abstracts/" as *;
+
+:root {
+  @each $size-name, $size-map in $font-sizes {
+    @each $size, $value in $size-map {
+      --fs-#{$size}: #{$value};
+    }
+    @if ($size-name != sm) {
+      @include mq($size-name) {
+        --fs-#{$size}: #{$value};
+      }
+    }
+  }
+}
