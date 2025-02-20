@@ -28,3 +28,19 @@
     }
   }
 }
+
+body[data-type="light"] {
+  @each $color-name, $color-map in $light {
+    @each $shade, $value in $color-map {
+      --clr-#{$color-name}-#{$shade}: #{$value};
+    }
+  }
+}
+
+body[data-type="dark"] {
+  @each $color-name, $color-map in $dark {
+    @each $shade, $value in $color-map {
+      --clr-#{$color-name}-#{$shade}: #{$value};
+    }
+  }
+}
