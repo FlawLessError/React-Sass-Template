@@ -1,6 +1,7 @@
-@use "../abstracts/" as *;
-$ff-sans: "Open Sans", sans-serif;
-$ff-serif: "Abril Fatface", serif;
+@use "functions" as *;
+
+$ff-sans: "Source Sans 3", sans-serif;
+$ff-serif: "Alegreya SC", serif;
 
 $ff-base: $ff-sans;
 $ff-accent: $ff-serif;
@@ -32,4 +33,7 @@ $fs-800: var(--fs-800);
 $fs-900: var(--fs-900);
 
 $fw-400: 400;
+$fw-600: 600;
 $fw-700: 700;
+
+$letter-spacing: 0.16em;

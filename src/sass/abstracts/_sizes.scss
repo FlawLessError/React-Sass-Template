@@ -14,10 +14,9 @@ $size-13: 6rem;
 $size-14: 8rem;
 $size-15: 10rem;
 
-// HACK: TO BE REMOVED!
 //spacing related
-$hero-padding-block: 20rem;
-$section-padding-block: clamp(3rem, 10vh, 7rem);
+$hero-padding-block: clamp($size-12, 0.5rem + 10vw, $size-13);
+$section-padding-block: clamp($size-12, 0.5rem + 10vw, $size-13);
 $card-body-padding: clamp(1rem, 5vw, 5rem);
 
 //display gap related
@@ -26,5 +25,6 @@ $flex-gap: 1rem;
 
 //container related
 $container-inline-padding: 1rem;
-$container: 77.75rem;
-$container-wide: 101.5625rem;
+$container: rem(1024);
+$container-wide: rem(1117);
+$container-narrow: rem(564);

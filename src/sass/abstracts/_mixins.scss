@@ -2,6 +2,9 @@
 @use "sass:meta";
 @use "sass:math";
 
+@use "sizes" as *;
+@use "colors" as *;
+@use "typography" as *;
 @use "breakpoints" as *;
 
 // Media Query
@@ -23,29 +26,6 @@
   }
 }
 
-// Container
-@mixin container($width: normal) {
-  --padding: #{$container-inline-padding} * 2;
-  --max-width: #{$container};
-
-  width: min(calc (100% - var(--padding)), var(--max-width));
-  margin-inline: auto;
-
-  @if ($width == narrow) {
-    --max-width: #{$container-narrow};
-  }
-
-  @if ($width == wide) {
-    --max-width: #{$container-wide};
-  }
-
-  @if ($width == full-bleed) {
-    --max-width: 100%;
-  }
-
-  @content;
-}
-
 // Flex-group
 @mixin flex-group($flex-column-gap: $flex-gap, $flex-row-gap: $flex-gap * 0.5) {
   display: flex;
@@ -53,6 +33,17 @@
   column-gap: $flex-column-gap;
   row-gap: $flex-row-gap;
   @content;
+}
+
+@mixin heading($font-size, $color: $color-accent-500) {
+  color: $color;
+  font-size: $font-size;
+  font-family: $ff-accent;
+  font-weight: $fw-700;
+  letter-spacing: $letter-spacing;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 // Visually hidden

@@ -17,10 +17,10 @@ svg {
   max-width: 100%;
 }
 
-ul[class],
-ol[class] {
+ul,
+ol {
   // Incase you want them to have default margin and padding
-  // margin: 0;
-  // padding: 0;
+  margin: 0;
+  padding: 0;
   list-style-type: "";
 }
