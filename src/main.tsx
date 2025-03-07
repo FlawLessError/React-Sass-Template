@@ -1,11 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import MainProvider from "./pages/MainProvider.tsx";
+import RouterContextProvider from "./pages/RouterOutlet/RouterContextProvider";
 
 import "./sass/main.scss";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <MainProvider></MainProvider>
+    <RouterContextProvider></RouterContextProvider>
   </StrictMode>,
 );
