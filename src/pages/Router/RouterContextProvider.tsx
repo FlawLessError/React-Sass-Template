@@ -15,8 +15,8 @@ const router = createBrowserRouter([
   },
 ]);
 
-const RouterProvider = () => {
+const RouterContextProvider = () => {
   return <RouterProvider router={router} />;
 };
 
-export default RouterProvider;
+export default RouterContextProvider;
