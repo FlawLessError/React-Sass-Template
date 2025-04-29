@@ -13,7 +13,7 @@
 }
 
 .container[data-type="narrow"] {
-  --max-width: #{$container-wide};
+  --max-width: #{$container-narrow};
 }
 
 .container[data-type="full-bleed"] {
