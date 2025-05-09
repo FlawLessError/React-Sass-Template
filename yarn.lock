@@ -3754,6 +3754,7 @@ __metadata:
     eslint-plugin-react-hooks: "npm:^5.2.0"
     eslint-plugin-react-refresh: "npm:^0.4.20"
     globals: "npm:^16.0.0"
+    postcss: "npm:^8.5.3"
     postcss-preset-env: "npm:^10.1.6"
     react: "npm:^19.1.0"
     react-dom: "npm:^19.1.0"
