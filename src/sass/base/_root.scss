@@ -1,5 +1,6 @@
 @use "../abstracts/" as *;
 
+// Setting up root variables
 :root {
   @each $color-name, $color-map in $light {
     @each $shade, $value in $color-map {
@@ -18,11 +19,13 @@
   }
 
   @each $size-name, $size-map in $font-sizes {
+    // small screen
     @if ($size-name == sm) {
       @each $size, $value in $size-map {
         --fs-#{$size}: #{$value};
       }
     }
+    // big screen
     @if ($size-name != sm) {
       @include mq($size-name) {
         @each $size, $value in $size-map {
@@ -33,6 +36,7 @@
   }
 }
 
+// Applying css to the page;
 body[data-type="light"] {
   @each $color-name, $color-map in $light {
     @each $shade, $value in $color-map {
